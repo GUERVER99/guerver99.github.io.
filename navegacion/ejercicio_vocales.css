@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #a7ffeb, #80deea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.vocales-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 80px;
+    text-align: center;
+}
+
+.vocal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vocal {
+    font-size: 4rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.btn-sound {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn-sound img {
+    width: 40px;
+    height: 40px;
+}
+
+.vocal-check {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.btn-verificar {
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-verificar:hover {
+    background-color: #0277bd;
+}
+
+/* Notificación centrada y grande */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 128, 0, 0.8); /* Para notificación correcta */
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#notification-incorrect {
+    background-color: rgba(255, 0, 0, 0.8); /* Color rojo para notificación de error */
+}
+
+.hidden {
+    display: none;
+}
+
+.notification:not(.hidden) {
+    opacity: 1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Degradado de azul a verde */
+    margin: 0;
+    padding: 20px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Señala las Vocales</title>
+    <link rel="stylesheet" href="ejercicio_vocales.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SEÑALA LAS VOCALES</h1>
+
+        <!-- Notificación de éxito -->
+        <div id="notification-correct" class="notification hidden">¡Correcto!</div>
+
+        <!-- Notificación de error -->
+        <div id="notification-incorrect" class="notification hidden">¡Incorrecto! Selecciona solo las vocales.</div>
+
+        <div class="vocales-grid">
+            <!-- Vocal A -->
+            <div class="vocal-item">
+                <span class="vocal">A</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="true">
+            </div>
+            <!-- Consonante B -->
+            <div class="vocal-item">
+                <span class="vocal">B</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="false">
+            </div>
+            <!-- Vocal E -->
+            <div class="vocal-item">
+                <span class="vocal">E</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="true">
+            </div>
+            <!-- Consonante C -->
+            <div class="vocal-item">
+                <span class="vocal">C</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="false">
+            </div>
+            <!-- Vocal I -->
+            <div class="vocal-item">
+                <span class="vocal">I</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="true">
+            </div>
+            <!-- Consonante D -->
+            <div class="vocal-item">
+                <span class="vocal">D</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="false">
+            </div>
+            <!-- Vocal O -->
+            <div class="vocal-item">
+                <span class="vocal">O</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="true">
+            </div>
+            <!-- Consonante F -->
+            <div class="vocal-item">
+                <span class="vocal">F</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="false">
+            </div>
+            <!-- Vocal U -->
+            <div class="vocal-item">
+                <span class="vocal">U</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="true">
+            </div>
+            <!-- Consonante G -->
+            <div class="vocal-item">
+                <span class="vocal">G</span>
+                <button class="btn-sound"><img src="musica.png" alt="Audio"></button>
+                <input type="checkbox" class="vocal-check" data-is-vocal="false">
+            </div>
+        </div>
+
+        <button class="btn-verificar" onclick="verificarSeleccion()">Verificar</button>
+    </div>
+
+    <script>
+        function verificarSeleccion() {
+            const vocalesCorrectas = document.querySelectorAll('.vocal-check[data-is-vocal="true"]');
+            const consonantesIncorrectas = document.querySelectorAll('.vocal-check[data-is-vocal="false"]');
+            let correcto = true;
+
+            // Verificar si las vocales correctas están seleccionadas
+            vocalesCorrectas.forEach(vocal => {
+                if (!vocal.checked) {
+                    correcto = false;
+                }
+            });
+
+            // Verificar si las consonantes están seleccionadas (no deben estarlo)
+            consonantesIncorrectas.forEach(consonante => {
+                if (consonante.checked) {
+                    correcto = false;
+                }
+            });
+
+            // Mostrar la notificación correcta o incorrecta
+            const notificationCorrect = document.getElementById('notification-correct');
+            const notificationIncorrect = document.getElementById('notification-incorrect');
+
+            if (correcto) {
+                notificationCorrect.classList.remove('hidden');
+                notificationIncorrect.classList.add('hidden');
+                setTimeout(() => {
+                    notificationCorrect.classList.add('hidden');
+                    window.location.href = 'index.html';
+                }, 2000); // Mostrar la notificación durante 2 segundos
+            } else {
+                notificationIncorrect.classList.remove('hidden');
+                notificationCorrect.classList.add('hidden');
+                setTimeout(() => {
+                    notificationIncorrect.classList.add('hidden');
+                }, 2000); // Mostrar la notificación durante 2 segundos
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Colores</title>
+    <link rel="stylesheet" href="ejercicio_colores.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Selecciona el Color: <span id="color-name">Amarillo</span> 
+            <button class="btn-sound">
+                <img src="musica.png" alt="Sonido">
+            </button>
+        </h1>
+
+        <div class="color-grid">
+            <!-- Imagen correcta -->
+            <div class="color-item" onclick="seleccionarColor(this, false)">
+                <img src="rojo.webp" alt="Rojo" class="color-image">
+            </div>
+            <!-- Imagen incorrecta 1 -->
+            <div class="color-item" onclick="seleccionarColor(this, false)">
+                <img src="azul.jpg" alt="Azul" class="color-image">
+            </div>
+            <!-- Imagen incorrecta 2 -->
+            <div class="color-item" onclick="seleccionarColor(this, false)">
+                <img src="verde.avif" alt="Verde" class="color-image">
+            </div>
+            <!-- Imagen incorrecta 3 -->
+            <div class="color-item" onclick="seleccionarColor(this, true)">
+                <img src="amarillo.jpg" alt="Amarillo" class="color-image">
+            </div>
+        </div>
+
+        <button class="btn-verificar" onclick="verificarSeleccion()">Verificar</button>
+        <div id="notification" class="notification">¡Correcto!</div>
+    </div>
+
+    <script>
+        let colorSeleccionado = false;
+
+        function seleccionarColor(element, esCorrecto) {
+            // Remover selección de otras imágenes
+            const items = document.querySelectorAll('.color-item');
+            items.forEach(item => {
+                item.querySelector('.color-image').classList.remove('selected');
+            });
+
+            // Seleccionar la imagen actual
+            element.querySelector('.color-image').classList.add('selected');
+            colorSeleccionado = esCorrecto;
+        }
+
+        function verificarSeleccion() {
+            const notification = document.getElementById('notification');
+            if (colorSeleccionado) {
+                notification.style.display = 'block';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    // Redirigir a la siguiente página (cambiar la ruta según el siguiente color)
+                    window.location.href = 'ejercicio_colores3.html'; // Cambia por la página del siguiente color
+                }, 2000); // Mostrar la notificación durante 2 segundos
+            } else {
+                alert('Por favor, selecciona el color correcto.');
+            }
+        }
+    </script>
+</body>
+</html>

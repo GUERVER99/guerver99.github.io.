@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-grid {
+    display: flex;
+    justify-content: space-around; /* Espacio entre los videos */
+    flex-wrap: wrap; /* Permitir que los videos se ajusten en pantallas pequeñas */
+}
+
+.video-item {
+    position: relative;
+    margin: 10px;
+    flex: 1 1 30%; /* Permite que cada video ocupe hasta el 30% del ancho disponible */
+    max-width: 300px; /* Limitar el ancho máximo de los videos */
+    background-color: white; /* Fondo blanco para el video */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    overflow: hidden; /* Esconder el contenido que sobresalga */
+}
+
+.video-thumbnail {
+    position: relative;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.btn-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+}
+
+.audio-icon {
+    text-align: center; /* Centrar el ícono de audio */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+}
+
+.audio-icon img {
+    width: 40px; /* Tamaño del ícono de audio */
+    cursor: pointer; /* Cursor de mano */
+}
+
+.video {
+    display: none; /* Ocultar los videos por defecto */
+    width: 100%;
+    border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Degradado de azul a verde */
+    margin: 0;
+    padding: 20px;
+}
+
+.btn-volver {
+    background-color: #e8f07a; /* Verde */
+    color: rgb(8, 1, 1); /* Texto blanco */
+    border: none;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 0; /* Espacio superior e inferior */
+    cursor: pointer;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.btn-volver:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
+.button-container {
+    display: flex;               /* Usar Flexbox */
+    justify-content: center;     /* Centrar horizontalmente */
+    margin: 20px 0;             /* Espacio superior e inferior */
+}

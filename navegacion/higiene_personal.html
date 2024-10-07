@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higiene Personal</title>
+    <link rel="stylesheet" href="higiene_personal.css">
+</head>
+<body>
+    <div class="container">
+        <h1>HIGIENE PERSONAL</h1>
+        <div class="video-grid">
+            <!-- Video Cepillarse -->
+            <div class="video-item">
+                <div class="audio-icon">
+                    <img src="musica.png" alt="Reproducir audio" onclick="reproducirAudio('audio-cepillarse')">
+                    <audio id="audio-cepillarse">
+                        <source src="audio_cepillarse.mp3" type="audio/mp3">
+                        Tu navegador no soporta el audio.
+                    </audio>
+                </div>
+                <div class="video-thumbnail">
+                    <img src="cepillarse.jpg" alt="Cepillarse los dientes">
+                    <button class="btn-play" onclick="reproducirVideo('video-cepillarse')">
+                        <img src="boton-de-play.png" alt="Reproducir">
+                    </button>
+                </div>
+                <video id="video-cepillarse" class="video" controls>
+                    <source src="cepillarse.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+
+            <!-- Video Bañarse -->
+            <div class="video-item">
+                <div class="audio-icon">
+                    <img src="musica.png" alt="Reproducir audio" onclick="reproducirAudio('audio-banarse')">
+                    <audio id="audio-banarse">
+                        <source src="audio_banarse.mp3" type="audio/mp3">
+                        Tu navegador no soporta el audio.
+                    </audio>
+                </div>
+                <div class="video-thumbnail">
+                    <img src="bañarse.jpg" alt="Bañarse">
+                    <button class="btn-play" onclick="reproducirVideo('video-banarse')">
+                        <img src="boton-de-play.png" alt="Reproducir">
+                    </button>
+                </div>
+                <video id="video-banarse" class="video" controls>
+                    <source src="banarse.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+
+            <!-- Video Lavarse las Manos -->
+            <div class="video-item">
+                <div class="audio-icon">
+                    <img src="musica.png" alt="Reproducir audio" onclick="reproducirAudio('audio-lavarse-manos')">
+                    <audio id="audio-lavarse-manos">
+                        <source src="audio_lavarse_manos.mp3" type="audio/mp3">
+                        Tu navegador no soporta el audio.
+                    </audio>
+                </div>
+                <div class="video-thumbnail">
+                    <img src="lavarse_las_manos.jpg" alt="Lavarse las manos">
+                    <button class="btn-play" onclick="reproducirVideo('video-lavarse-manos')">
+                        <img src="boton-de-play.png" alt="Reproducir">
+                    </button>
+                </div>
+                <video id="video-lavarse-manos" class="video" controls>
+                    <source src="lavarse_manos.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+        </div>
+
+        <!-- Botón para volver al índice -->
+        <div class="button-container">
+            <button class="btn-volver" onclick="window.location.href='index.html'">Inicio</button>
+        </div>
+
+
+    <script>
+        function reproducirVideo(videoId) {
+            // Pausar todos los videos
+            const videos = document.querySelectorAll('.video');
+            videos.forEach(video => {
+                video.pause();
+                video.currentTime = 0; // Reiniciar el video
+            });
+            
+            // Reproducir el video seleccionado
+            const video = document.getElementById(videoId);
+            video.play();
+        }
+
+        function reproducirAudio(audioId) {
+            // Reproducir el audio seleccionado
+            const audio = document.getElementById(audioId);
+            audio.play();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.color-grid {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas si es necesario */
+}
+
+.color-item {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.color-image {
+    width: 100px; /* Cambia el tamaño según sea necesario */
+    height: auto; /* Mantiene la relación de aspecto */
+    border: 2px solid transparent; /* Para el borde al seleccionar */
+    border-radius: 5px; /* Esquinas redondeadas */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.color-image.selected {
+    border-color: green; /* Borde verde si está seleccionado */
+}
+
+.btn-verificar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave para el botón */
+}
+
+.btn-verificar:hover {
+    background-color: #45a049; /* Color del botón al pasar el ratón */
+}
+
+.notification {
+    display: none;
+    font-size: 24px;
+    color: green;
+    margin-top: 20px;
+}
+
+.btn-sound {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+    padding: 0; /* Sin relleno */
+    margin-left: 10px; /* Espacio a la izquierda */
+    display: inline-flex; /* Alinear el icono en línea */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.btn-sound img {
+    width: 30px; /* Cambia el tamaño del icono según sea necesario */
+    height: auto; /* Mantiene la relación de aspecto */
+    transition: transform 0.3s; /* Transición suave para el efecto */
+}
+
+.btn-sound:hover img {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Degradado de azul a verde */
+    margin: 0;
+    padding: 20px;
+}
